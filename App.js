@@ -16,15 +16,12 @@ import Home from './src/screens/restaurant/Home';
 import { Colors } from './src/themes';
 import BottomTab from './src/navigation/BottomTab';
 import { NavigationContainer } from '@react-navigation/native';
+import AppStack from './src/navigation/AppStack';
 const App: () => Node = () => {
  
 
   return (
-    <NavigationContainer>
-       
-        <BottomTab />
-      
-    </NavigationContainer>
+   <AppStack />
    
   );
 };
