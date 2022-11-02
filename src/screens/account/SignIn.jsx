@@ -2,8 +2,18 @@ import React from 'react';
 import { image,View,Text, TouchableOpacity, ScrollView } from 'react-native'
 import { MyButton,MyTextInput, MyButtonSecondary } from '../../components';
 import { Images } from '../../themes';
+import { Formik } from 'formik';
+const initValues = {
+  Email: "Test1",
+  Password: "Password"
+}
+const handleLogin = (props)=>{
+  return ()=>{
+    props.navigation.navigate("Home")
+  }
+}
 const SignIn2 = (props) => {
-
+  
   return(
     <View style={{flex:1}}>
        <Text style= {{
@@ -19,9 +29,10 @@ const SignIn2 = (props) => {
             Welcome Back.
         </Text>
       
-        <MyTextInput showEye={false} placeholder = "Email" labelContent="Email" style={{ margin:10}}/>
+       <MyTextInput showEye={false} placeholder = "Email" labelContent="Email" style={{ margin:10}} />
         <MyTextInput showEye={false} placeholder = "Password" labelContent="Password" style={{ margin:10}}  />
-        <MyButton textContent='Sign in' />
+       
+        <MyButton textContent='Sign in' onPressFunc={handleLogin(props)}/>
         <View style={{flex:1, flexDirection:"row", marginTop:10}}>
           <View style={{flex:1, backgroundColor:"black", marginHorizontal:10, height:1, marginTop:10}}></View>
           <Text style={{flex:1,}}>Or continue with</Text>
